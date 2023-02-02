@@ -1,12 +1,12 @@
 import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Login from "./Components/Login";
+import Login from "./Components/Login/Login";
 import LoginPhone from "./Components/LoginPhone";
 import Profile from "./Components/Profile";
 import { getAuth } from "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useEffect } from "react";
-import Navbar from "./Components/Navbar";
+import Navbar from "./Components/Navbar/Navbar";
 import RentForm from "./Components/RentForm";
 import Feed from "./Components/Feed";
 import LoginPhoneNew from "./Components/LoginPhoneNew/LoginPhoneNew";
