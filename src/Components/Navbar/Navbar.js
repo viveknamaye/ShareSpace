@@ -26,7 +26,7 @@ export default function Navbar (props) {
       {/* <h1 className="font-bold">Navbar</h1>
       <h1>{user ? `${user.fname} ${user.lname}` : "Not Logged In"}</h1> */}
 
-      <nav class='drop-shadow bg-gray-100 border-gray-200 px-2 sm:px-4 py-4 rounded dark:bg-gray-900'>
+      <nav class='fixed top-0 left-0 right-0 drop-shadow bg-gray-100 border-gray-200 px-2 sm:px-4 py-4 rounded dark:bg-gray-900'>
         <div class='container flex flex-wrap items-center justify-between mx-auto'>
           <a href='/#' class='flex items-center'>
             <svg
