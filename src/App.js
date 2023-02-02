@@ -9,6 +9,7 @@ import { useEffect } from 'react'
 import Navbar from './Components/Navbar/Navbar'
 import RentForm from './Components/RentForm'
 import Landing from './Pages/Landing'
+import Feed from './Pages/Feed'
 
 function App () {
   const [user, loading, error] = useAuthState(getAuth())
@@ -41,6 +42,10 @@ function App () {
     {
       path: '/rent',
       element: <RentForm />
+    },
+    {
+      path: '/feed',
+      element: <Feed />
     }
   ])
 
