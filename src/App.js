@@ -8,6 +8,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useEffect } from "react";
 import Navbar from "./Components/Navbar";
 import RentForm from "./Components/RentForm";
+import Landing from "./Pages/Landing";
 
 function App() {
   const [user, loading, error] = useAuthState(getAuth());
@@ -23,7 +24,7 @@ function App() {
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <></>,
+      element: <Landing />,
     },
     {
       path: "/login",
