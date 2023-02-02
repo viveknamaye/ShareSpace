@@ -8,7 +8,6 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useEffect } from "react";
 import Navbar from "./Components/Navbar/Navbar";
 import RentForm from "./Components/RentForm";
-import Feed from "./Components/Feed";
 import LoginPhoneNew from "./Components/LoginPhoneNew/LoginPhoneNew";
 import "./App.css";
 import Landing from "./Pages/Landing";
