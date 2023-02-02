@@ -1,2 +1,2 @@
 # TSEC_HACKS_2023
-Solution for HACKS23 PS - FIND A FLAT + ROOM-MATE
+solution for find a roomate PS of TSEC HACKS 2023
