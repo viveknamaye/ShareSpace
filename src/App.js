@@ -9,6 +9,7 @@ import { useEffect } from "react";
 import Navbar from "./Components/Navbar/Navbar";
 import RentForm from "./Components/RentForm";
 import LoginPhoneNew from "./Components/LoginPhoneNew/LoginPhoneNew";
+import GroupDetails from "./Pages/GroupDetails";
 import "./App.css";
 import Landing from "./Pages/Landing";
 import Feed from "./Pages/Feed";
@@ -57,6 +58,10 @@ function App() {
     {
       path: "/roomId",
       element: <RoomDetails />,
+    },
+    {
+      path: "/groupId",
+      element: <GroupDetails />,
     },
   ]);
 
