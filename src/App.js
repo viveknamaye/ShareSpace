@@ -1,13 +1,16 @@
 import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Login from "./Components/Login";
+import Login from "./Components/Login/Login";
 import LoginPhone from "./Components/LoginPhone";
 import Profile from "./Components/Profile";
 import { getAuth } from "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useEffect } from "react";
-import Navbar from "./Components/Navbar";
+import Navbar from "./Components/Navbar/Navbar";
 import RentForm from "./Components/RentForm";
+import Feed from "./Components/Feed";
+import LoginPhoneNew from "./Components/LoginPhoneNew/LoginPhoneNew";
+import "./App.css";
 import Landing from "./Pages/Landing";
 import Feed from "./Pages/Feed";
 import RoomDetails from "./Pages/RoomDetails";
@@ -35,6 +38,10 @@ function App() {
     {
       path: "/login/phone",
       element: <LoginPhone />,
+    },
+    {
+      path: "/login/phone/new",
+      element: <LoginPhoneNew />,
     },
     {
       path: "/profile",
