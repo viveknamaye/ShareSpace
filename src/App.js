@@ -3,12 +3,25 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Login from "./Components/Login";
 import LoginPhone from "./Components/LoginPhone";
 import Profile from "./Components/Profile";
+import { getAuth } from "firebase/auth";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { useEffect } from "react";
 
 function App() {
+  const [user, loading, error] = useAuthState(getAuth());
+  useEffect(() => {
+    if (loading) {
+      console.log("Loading");
+    } else if (error) {
+      console.log(error);
+    } else if (user) {
+      console.log(user);
+    }
+  }, [loading, error, user]);
   const router = createBrowserRouter([
     {
       path: "/",
-      element: <App />,
+      element: <></>,
     },
     {
       path: "/login",
@@ -20,7 +33,7 @@ function App() {
     },
     {
       path: "/profile",
-      element: <Profile />,
+      element: user ? <Profile user={user} /> : <Login />,
     },
   ]);
 

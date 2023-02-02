@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 import { getFirestore, collection, doc, setDoc } from "firebase/firestore";
 import { ref, getDownloadURL, uploadBytes, getStorage } from "firebase/storage";
-import { getAuth } from "firebase/auth";
-import { useAuthState } from "react-firebase-hooks/auth";
 
 export default function Profile(props) {
   const [image, setImage] = useState("");
@@ -22,29 +20,21 @@ export default function Profile(props) {
       bio: "",
     },
   });
-  const [loggedinUser, loading, error] = useAuthState(getAuth());
 
   useEffect(() => {
-    if (loading) {
-      console.log("Loading");
-    } else if (error) {
-      console.log(error);
-    } else if (loggedinUser) {
+    if (props.user) {
       setUser({
-        uid: loggedinUser.uid,
-        phoneNumber: loggedinUser.phoneNumber,
+        uid: props.user.uid,
+        phoneNumber: props.user.phoneNumber,
         ...user,
       });
     }
-  }, [loading, error, loggedinUser]);
-
-  useEffect(() => {
-    if (!user.phoneNumber) {
+    if (!props.user.phoneNumber) {
       getDownloadURL(ref(getStorage(), `profile/${user.uid}`)).then((url) => {
         setImage(url);
       });
     }
-  }, [user]);
+  }, [props.user]);
 
   return (
     <div>
