@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { getFirestore, collection, doc, setDoc } from "firebase/firestore";
 import { ref, getDownloadURL, uploadBytes, getStorage } from "firebase/storage";
-import { addDoc, getDoc } from "firebase/firestore";
+import { getDoc } from "firebase/firestore";
+import { Link } from "react-router-dom";
 export default function Profile(props) {
   const [image, setImage] = useState("");
   const [changed, setChanged] = useState(false);
@@ -23,18 +24,21 @@ export default function Profile(props) {
 
   useEffect(() => {
     if (props.user) {
-      getDoc(doc(collection(getFirestore(), "user"), user.uid)).then((doc) => {
-        if (doc.exists()) {
-          setUser({
-            uid: props.user.uid,
-            phoneNumber: props.user.phoneNumber,
-            ...doc.data(),
-          });
-        } else {
-          // doc.data() will be undefined in this case
-          console.log("No such document!");
+      getDoc(doc(collection(getFirestore(), "user"), props.user.uid)).then(
+        (doc) => {
+          if (doc.exists()) {
+            setUser({
+              uid: props.user.uid,
+              phoneNumber: props.user.phoneNumber,
+              ...user,
+              ...doc.data(),
+            });
+          } else {
+            // doc.data() will be undefined in this case
+            console.log("No such document!");
+          }
         }
-      });
+      );
     }
     if (!props.user.phoneNumber) {
       getDownloadURL(ref(getStorage(), `profile/${user.uid}`)).then((url) => {
@@ -253,6 +257,7 @@ export default function Profile(props) {
         <br />
 
         {!changed ? <></> : <input type="submit" value="Submit" />}
+        {!changed ? <Link to="/">Continue</Link> : <></>}
       </form>
     </div>
   );

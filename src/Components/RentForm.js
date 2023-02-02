@@ -1,3 +1,4 @@
+import { addDoc, collection, getFirestore } from "firebase/firestore";
 import { useState } from "react";
 
 export default function RentForm(props) {
@@ -31,7 +32,10 @@ export default function RentForm(props) {
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          console.log(rent);
+          //   console.log(rent);
+          addDoc(collection(getFirestore(), "room"), rent).then((snap) => {
+            console.log("Document written with ID: ", snap);
+          });
         }}
       >
         <label htmlFor="rent">Rent</label>
