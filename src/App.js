@@ -6,6 +6,8 @@ import Profile from "./Components/Profile";
 import { getAuth } from "firebase/auth";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useEffect } from "react";
+import Navbar from "./Components/Navbar";
+import RentForm from "./Components/RentForm";
 
 function App() {
   const [user, loading, error] = useAuthState(getAuth());
@@ -35,9 +37,18 @@ function App() {
       path: "/profile",
       element: user ? <Profile user={user} /> : <Login />,
     },
+    {
+      path: "/rent",
+      element: <RentForm />,
+    },
   ]);
 
-  return <RouterProvider router={router} />;
+  return (
+    <>
+      <Navbar user={user} />
+      <RouterProvider router={router} />
+    </>
+  );
 }
 
 export default App;

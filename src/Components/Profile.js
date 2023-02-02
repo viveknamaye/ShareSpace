@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getFirestore, collection, doc, setDoc } from "firebase/firestore";
 import { ref, getDownloadURL, uploadBytes, getStorage } from "firebase/storage";
-
+import { addDoc, getDoc } from "firebase/firestore";
 export default function Profile(props) {
   const [image, setImage] = useState("");
   const [changed, setChanged] = useState(false);
@@ -23,10 +23,17 @@ export default function Profile(props) {
 
   useEffect(() => {
     if (props.user) {
-      setUser({
-        uid: props.user.uid,
-        phoneNumber: props.user.phoneNumber,
-        ...user,
+      getDoc(doc(collection(getFirestore(), "user"), user.uid)).then((doc) => {
+        if (doc.exists()) {
+          setUser({
+            uid: props.user.uid,
+            phoneNumber: props.user.phoneNumber,
+            ...doc.data(),
+          });
+        } else {
+          // doc.data() will be undefined in this case
+          console.log("No such document!");
+        }
       });
     }
     if (!props.user.phoneNumber) {
