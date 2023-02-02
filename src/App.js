@@ -8,6 +8,8 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useEffect } from "react";
 import Navbar from "./Components/Navbar";
 import RentForm from "./Components/RentForm";
+import Feed from "./Components/Feed";
+import LoginPhoneNew from "./Components/LoginPhoneNew/LoginPhoneNew";
 
 function App() {
   const [user, loading, error] = useAuthState(getAuth());
@@ -34,12 +36,20 @@ function App() {
       element: <LoginPhone />,
     },
     {
+      path: "/login/phone/new",
+      element: <LoginPhoneNew />,
+    },
+    {
       path: "/profile",
       element: user ? <Profile user={user} /> : <Login />,
     },
     {
       path: "/rent",
       element: <RentForm />,
+    },
+    {
+      path: "/feed",
+      element: <Feed />,
     },
   ]);
 
