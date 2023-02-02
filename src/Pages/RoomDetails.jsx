@@ -381,6 +381,7 @@ const RoomDetails = () => {
               src="https://firebasestorage.googleapis.com/v0/b/react-test-4399d.appspot.com/o/profile%2FiZrzTTp3Q4WcVp5VUydsp9N3oK92?alt=media&token=2f47222b-da63-4cf0-b0aa-038c23e53050"
               alt="..."
               style={{
+                borderRadius: "20px",
                 width: "60%",
               }}
             />
