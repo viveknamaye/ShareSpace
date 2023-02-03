@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import Sidebar from "../Components/Sidebar/Sidebar";
+import { useLocation } from "react-router-dom";
 
 function Carousel(props) {
   return (
@@ -208,7 +209,7 @@ function Info(props) {
             fontWeight: "bold",
           }}
         >
-          Name
+          {props.room.name}
         </div>
         <div
           style={{
@@ -223,14 +224,22 @@ function Info(props) {
               color: "black",
             }}
           >
-            ₹ 25,000
+            ₹ {props.room.rent}
           </span>{" "}
-          for 25 Square foots
+          for {props.room.size} Square foots
         </div>
-        <div>Road no. 110, Mahatma Gandhi Mumbai, Maharashtra, 400045</div>
+        <div>{props.room.address.street}</div>
         <div style={{ display: "flex", gap: "10px", marginTop: "10px" }}>
-          <Button color="white" bgcolor="#DB3C3C" text="Gender: Male" />
-          <Button color="white" bgcolor="#3C68DB" text="Max: 5 people" />
+          <Button
+            color="white"
+            bgcolor="#DB3C3C"
+            text={`${props.room.gender}`}
+          />
+          <Button
+            color="white"
+            bgcolor="#3C68DB"
+            text={`Max: ${props.room.accomodation} people`}
+          />
           <Button color="black" bgcolor="#E2E5EB" text="&#11088;	4 Stars" />
         </div>
         <div
@@ -247,16 +256,9 @@ function Info(props) {
             alt=""
             style={{ width: "40px", height: "40px", borderRadius: "50%" }}
           />
-          Pranav Dani
+          Dani Boi
         </div>
-        <div className="bio">
-          It is a long established fact that a reader will be distracted by the
-          readable content of a page when looking at its layout. The point of
-          using Lorem Ipsum is that it has a more-or-less normal distribution of
-          letters, as opposed to using 'Content here, content here', making it
-          look like readable Englishitors now use Lorem Ipsum as their default
-          model text, a
-        </div>
+        <div className="bio">{props.room.bio}</div>
       </div>
     </>
   );
@@ -343,7 +345,8 @@ function Reviews(props) {
   );
 }
 
-const RoomDetails = () => {
+const RoomDetails = (props) => {
+  const [room, setRoom] = useState(useLocation().state);
   return (
     <>
       <Sidebar />
@@ -390,7 +393,7 @@ const RoomDetails = () => {
                 width: "40%",
               }}
             >
-              <Info />
+              <Info room={room} />
             </div>
           </div>
           <br />

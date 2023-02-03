@@ -1,56 +1,62 @@
-import './App.css'
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import Login from './Components/Login/Login'
-import LoginPhone from './Components/LoginPhone'
-// import Profile from './Components/Profile'
-import UserProfile from './Pages/UserProfile'
-import { getAuth } from 'firebase/auth'
-import { useAuthState } from 'react-firebase-hooks/auth'
-import { useEffect } from 'react'
-import Navbar from './Components/Navbar/Navbar'
-import RentForm from './Components/RentForm'
-import LoginPhoneNew from './Components/LoginPhoneNew/LoginPhoneNew'
-import GroupDetails from './Pages/GroupDetails/GroupDetails'
-import './App.css'
-import Landing from './Pages/Landing'
-import Feed from './Pages/Feed/Feed'
-import RoomDetails from './Pages/RoomDetails'
-import AddNewRoom from './Pages/AddNewRoom'
-import Profile from './Components/Profile'
+import "./App.css";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  useLocation,
+} from "react-router-dom";
+import Login from "./Components/Login/Login";
+import LoginPhone from "./Components/LoginPhone";
+import Profile from "./Components/Profile";
+import { getAuth } from "firebase/auth";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { useEffect } from "react";
+import Navbar from "./Components/Navbar/Navbar";
+import RentForm from "./Components/RentForm";
+import LoginPhoneNew from "./Components/LoginPhoneNew/LoginPhoneNew";
+import GroupDetails from "./Pages/GroupDetails/GroupDetails";
+import "./App.css";
+import Landing from "./Pages/Landing";
+import Feed from "./Pages/Feed/Feed";
+import RoomDetails from "./Pages/RoomDetails";
+import AddNewRoom from "./Pages/AddNewRoom";
+import UserProfile from "./Pages/UserProfile";
 
-
-function App () {
-  const [user, loading, error] = useAuthState(getAuth())
+function App() {
+  const [user, loading, error] = useAuthState(getAuth());
   useEffect(() => {
     if (loading) {
-      console.log('Loading')
+      console.log("Loading");
     } else if (error) {
-      console.log(error)
+      console.log(error);
     } else if (user) {
-      console.log(user)
+      console.log(user);
     }
-  }, [loading, error, user])
+  }, [loading, error, user]);
   const router = createBrowserRouter([
     {
-      path: '/',
-      element: <Landing />
+      path: "/",
+      element: <Landing />,
     },
     {
-      path: '/login',
-      element: <Login />
+      path: "/login",
+      element: <Login />,
     },
     {
-      path: '/login/phone',
-      element: <LoginPhone />
+      path: "/login/phone",
+      element: <LoginPhone />,
     },
     {
-      path: '/login/phone/new',
-      element: <LoginPhoneNew />
+      path: "/login/phone/new",
+      element: <LoginPhoneNew />,
     },
     {
-      path: '/user-profile',
+      path: "/profile",
+      element: user ? <Profile user={user} /> : <Login />,
+    },
+    {
+      path: "/user-profile",
       // element: user ? <Profile user={user} /> : <Login />
-      element: <UserProfile />
+      element: <UserProfile />,
     },
     
     {
@@ -58,20 +64,20 @@ function App () {
       element: user ? <Profile user={user} /> : <Login />
     },
     {
-      path: '/rent',
-      element: <RentForm />
+      path: "/rent",
+      element: <RentForm />,
     },
     {
-      path: '/explore',
-      element: <Feed />
+      path: "/explore",
+      element: <Feed />,
     },
     {
-      path: '/roomId',
-      element: <RoomDetails />
+      path: "/roomId",
+      element: <RoomDetails user={user} />,
     },
     {
-      path: '/groupId',
-      element: <GroupDetails />
+      path: "/groupId",
+      element: <GroupDetails />,
     },
     {
       path: "/groupId",
@@ -81,14 +87,14 @@ function App () {
       path: "/owner/add-new-room",
       element: <AddNewRoom />,
     },
-  ])
+  ]);
 
   return (
     <>
       <Navbar user={user} />
       <RouterProvider router={router} />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
