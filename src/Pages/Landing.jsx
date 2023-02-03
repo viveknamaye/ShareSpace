@@ -1,5 +1,6 @@
 import React from 'react'
 import SearchBar from '../Components/SearchBar/SearchBar'
+import bg from './../assets/bg.jpg'
 
 const Landing = () => {
   return (
@@ -16,7 +17,7 @@ const Landing = () => {
           <SearchBar />
         </div>
         <div class='hidden lg:mt-0 lg:col-span-5 lg:flex'>
-          <img src='' alt='mockup' />
+          <img className='w-full h-full' src={bg} alt='sideup' />
         </div>
       </div>
     </section>

@@ -13,7 +13,7 @@ import {
 } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 
-// import "./LoginPhone.css";
+import "./LoginPhone.css";
 
 const LoginPhoneNew = () => {
   const navigate = useNavigate();
@@ -79,15 +79,17 @@ const LoginPhoneNew = () => {
         console.log(result);
         console.log(result.user.uid);
         getDoc(doc(collection(getFirestore(), "user"), result.user.uid)).then(
-          (doc) => {
-            if (!doc.exists()) {
+          (docs) => {
+            if (!docs.exists()) {
               setDoc(doc(collection(getFirestore(), "user"), result.user.uid), {
                 phoneNumber: result.user.phoneNumber,
                 uid: result.user.uid,
               }).then(() => {
-                navigate("/profile");
+                navigate("/user-profile");
               });
               console.log("login successful");
+            } else {
+              navigate("/user-profile");
             }
           }
         );
@@ -153,7 +155,7 @@ const LoginPhoneNew = () => {
               </div>
               <div id="recaptcha-container"></div>
               <div className="btncontainer">
-                <button className="verify" onClick={signin}>
+                <button className="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" onClick={signin}>
                   SEND OTP
                 </button>
               </div>
@@ -177,7 +179,7 @@ const LoginPhoneNew = () => {
                 })}
               </div>
               <div className="btncontainer">
-                <button className="verify" type="submit" onClick={ValidateOtp}>
+                <button className="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="submit" onClick={ValidateOtp}>
                   VERIFY
                 </button>
               </div>

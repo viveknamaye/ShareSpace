@@ -48,46 +48,46 @@ const UserProfile = () => {
                             <div className="flex items-center gap-4 justify-between">
                                 <div className='mb-2 w-1/2'>
                                     <label className="block text-sm font-medium mb-1" htmlFor="challengetitle">First Name <span className='text-red-500'>*</span></label>
-                                    <input id="challengetitle" className="w-full text-sm  border rounded-sm py-2 px-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-400" type="text" required autoComplete="on" />
+                                    <input value={'Akshay'} id="challengetitle" className="w-full text-sm  border rounded-sm py-2 px-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-400" type="text" required autoComplete="on" />
                                 </div>
                                 <div className='mb-2 w-1/2'>
                                     <label className="block text-sm font-medium mb-1" htmlFor="days">Last Name <span className='text-red-500'>*</span></label>
-                                    <input id="days" className="w-full text-sm border rounded-sm py-2 px-2 shadow-sm  focus:border-indigo-500 focus:ring-indigo-400" type="text" required autoComplete="on" />
+                                    <input value={'Kanade'} id="days" className="w-full text-sm border rounded-sm py-2 px-2 shadow-sm  focus:border-indigo-500 focus:ring-indigo-400" type="text" required autoComplete="on" />
                                 </div>
                             </div>
 
                             <div className='mb-2 w-1/2'>
                                 <label className="block text-sm font-medium mb-1" htmlFor="challengetitle">Street Name <span className='text-red-500'>*</span></label>
-                                <input id="challengetitle" className="w-full text-sm  border rounded-sm py-2 px-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-400" type="text" required autoComplete="on" />
+                                <input id="challengetitle" value={'Road no.01, Main road'} className="w-full text-sm  border rounded-sm py-2 px-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-400" type="text" required autoComplete="on" />
                             </div>
 
                             <div className="flex items-center gap-4 justify-between">
                                 <div className='mb-2 w-1/2'>
                                     <label className="block text-sm font-medium mb-1" htmlFor="challengetitle">City <span className='text-red-500'>*</span></label>
-                                    <input id="challengetitle" className="w-full text-sm  border rounded-sm py-2 px-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-400" type="text" required autoComplete="on" />
+                                    <input id="challengetitle" value={'Mumbai'} className="w-full text-sm  border rounded-sm py-2 px-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-400" type="text" required autoComplete="on" />
                                 </div>
                                 <div className='mb-2 w-1/2'>
                                     <label className="block text-sm font-medium mb-1" htmlFor="challengetitle">State <span className='text-red-500'>*</span></label>
-                                    <input id="challengetitle" className="w-full text-sm  border rounded-sm py-2 px-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-400" type="text" required autoComplete="on" />
+                                    <input id="challengetitle" value={'Maharashtra'} className="w-full text-sm  border rounded-sm py-2 px-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-400" type="text" required autoComplete="on" />
                                 </div>
                                 <div className='mb-2 w-1/2'>
                                     <label className="block text-sm font-medium mb-1" htmlFor="challengetitle">Pincode <span className='text-red-500'>*</span></label>
-                                    <input id="challengetitle" className="w-full text-sm  border rounded-sm py-2 px-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-400" type="text" required autoComplete="on" />
+                                    <input id="challengetitle" value={400089} className="w-full text-sm  border rounded-sm py-2 px-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-400" type="text" required autoComplete="on" />
                                 </div>
                             </div>
 
                             <div className="flex items-center gap-4 justify-between">
                                 <div className='mb-2 w-1/2'>
                                     <label className="block text-sm font-medium mb-1" htmlFor="challengetitle">Mobile Number <span className='text-red-500'>*</span></label>
-                                    <input id="challengetitle" className="w-full text-sm  border rounded-sm py-2 px-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-400" type="number" required autoComplete="on" />
+                                    <input id="challengetitle" value={8850030844} className="w-full text-sm  border rounded-sm py-2 px-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-400" type="number" required autoComplete="on" />
                                 </div>
                                 <div className='mb-2 w-1/2'>
                                     <label className="block text-sm font-medium mb-1" htmlFor="challengetitle">Occupation <span className='text-red-500'>*</span></label>
-                                    <input id="challengetitle" className="w-full text-sm  border rounded-sm py-2 px-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-400" type="text" required autoComplete="on" />
+                                    <input id="challengetitle" value={'Student'} className="w-full text-sm  border rounded-sm py-2 px-2 shadow-sm focus:border-indigo-500 focus:ring-indigo-400" type="text" required autoComplete="on" />
                                 </div>
                                 <div class="w-1/2 mb-2">
                                     <label for="country" class="block text-sm font-medium text-gray-400">Gender</label>
-                                    <select id="country" name="country" autocomplete="country-name" class="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
+                                    <select id="country" name="country" value={'Male'}  autocomplete="country-name" class="mt-1 block w-full rounded-md border border-gray-300 bg-white py-2 px-3 shadow-sm focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm">
                                         <option>Male</option>
                                         <option>Female</option>
                                         <option>Other</option>
@@ -108,15 +108,15 @@ const UserProfile = () => {
                                     {/* </label> */}
                                     <div class="w-1/2 flex items-center pl-4 border border-gray-200 rounded dark:border-gray-700">
                                         <input id="bordered-radio-1" type="radio" value="" name="bordered-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                        <label for="bordered-radio-1" class="w-full py-4 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Default radio</label>
+                                        <label for="bordered-radio-1" class="w-full py-4 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Yes</label>
                                     </div>
                                     {/* <label className="ml-6 inline-flex items-center"> */}
                                     {/* <input type="radio" name="mask" value="0" required checked={data.mask === "0" ? true : false} /><span className="ml-2">No</span> */}
                                     {/* <input type="radio" name="mask" value="0" required /><span className="ml-2">No</span> */}
                                     {/* </label> */}
                                     <div class="w-1/2 flex items-center pl-4 border border-gray-200 rounded dark:border-gray-700">
-                                        <input id="bordered-radio-1" type="radio" value="" name="bordered-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                        <label for="bordered-radio-1" class="w-full py-4 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Default radio</label>
+                                        <input id="bordered-radio-1" type="radio" value="" checked name="bordered-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+                                        <label for="bordered-radio-1" class="w-full py-4 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">No</label>
                                     </div>
                                 </div>
                             </div>
@@ -131,16 +131,16 @@ const UserProfile = () => {
                                     {/* <input type="radio" name="mask" value="1" required /><span className="ml-2">Yes</span> */}
                                     {/* </label> */}
                                     <div class="w-1/2 flex items-center pl-4 border border-gray-200 rounded dark:border-gray-700">
-                                        <input id="bordered-radio-1" type="radio" value="" name="bordered-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                        <label for="bordered-radio-1" class="w-full py-4 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Default radio</label>
+                                        <input id="bordered-radio-2" type="radio" value="" name="bordered-radio-2" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+                                        <label for="bordered-radio-2" class="w-full py-4 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Yes</label>
                                     </div>
                                     {/* <label className="ml-6 inline-flex items-center"> */}
                                     {/* <input type="radio" name="mask" value="0" required checked={data.mask === "0" ? true : false} /><span className="ml-2">No</span> */}
                                     {/* <input type="radio" name="mask" value="0" required /><span className="ml-2">No</span> */}
                                     {/* </label> */}
                                     <div class="w-1/2 flex items-center pl-4 border border-gray-200 rounded dark:border-gray-700">
-                                        <input id="bordered-radio-1" type="radio" value="" name="bordered-radio" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
-                                        <label for="bordered-radio-1" class="w-full py-4 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Default radio</label>
+                                        <input id="bordered-radio-2" type="radio" value="" checked name="bordered-radio-2" class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+                                        <label for="bordered-radio-2" class="w-full py-4 ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">No</label>
                                     </div>
                                 </div>
                             </div>
@@ -149,7 +149,7 @@ const UserProfile = () => {
 
                             <div className='mb-2'>
                                 <label class="block text-sm font-medium mb-1" htmlFor="affirmation">Bio <span class="text-red-500">*</span></label>
-                                <textarea id="affirmation" class="px-2 py-2 w-full text-sm border rounded-sm shadow-sm focus:border-indigo-500 focus:ring-indigo-500" rows="4" required></textarea>
+                                <textarea id="affirmation" value={'A BE final year student.'} class="px-2 py-2 w-full text-sm border rounded-sm shadow-sm focus:border-indigo-500 focus:ring-indigo-500" rows="4" required></textarea>
                             </div>
 
 
