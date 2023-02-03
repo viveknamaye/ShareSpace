@@ -2,7 +2,8 @@ import './App.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Login from './Components/Login/Login'
 import LoginPhone from './Components/LoginPhone'
-import Profile from './Components/Profile'
+// import Profile from './Components/Profile'
+import UserProfile from './Pages/UserProfile'
 import { getAuth } from 'firebase/auth'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { useEffect } from 'react'
@@ -46,8 +47,9 @@ function App () {
       element: <LoginPhoneNew />
     },
     {
-      path: '/profile',
-      element: user ? <Profile user={user} /> : <Login />
+      path: '/user-profile',
+      // element: user ? <Profile user={user} /> : <Login />
+      element: <UserProfile />
     },
     {
       path: '/rent',
