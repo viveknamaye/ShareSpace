@@ -14,6 +14,8 @@ import './App.css'
 import Landing from './Pages/Landing'
 import Feed from './Pages/Feed/Feed'
 import RoomDetails from './Pages/RoomDetails'
+import AddNewRoom from './Pages/AddNewRoom'
+
 
 function App () {
   const [user, loading, error] = useAuthState(getAuth())
@@ -62,7 +64,15 @@ function App () {
     {
       path: '/groupId',
       element: <GroupDetails />
-    }
+    },
+    {
+      path: "/groupId",
+      element: <GroupDetails />,
+    },
+    {
+      path: "/owner/add-new-room",
+      element: <AddNewRoom />,
+    },
   ])
 
   return (
