@@ -19,6 +19,7 @@ import Landing from "./Pages/Landing";
 import Feed from "./Pages/Feed/Feed";
 import RoomDetails from "./Pages/RoomDetails";
 import AddNewRoom from "./Pages/AddNewRoom";
+import UserProfile from "./Pages/UserProfile";
 
 function App() {
   const [user, loading, error] = useAuthState(getAuth());
@@ -51,6 +52,11 @@ function App() {
     {
       path: "/profile",
       element: user ? <Profile user={user} /> : <Login />,
+    },
+    {
+      path: "/user-profile",
+      // element: user ? <Profile user={user} /> : <Login />
+      element: <UserProfile />,
     },
     {
       path: "/rent",
