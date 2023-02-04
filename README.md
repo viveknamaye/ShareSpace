@@ -64,7 +64,7 @@ Entities in the system -
 #### 2. Group system -
 
 - This is a crucial component of the solution.
-- We didn't want the to user to just scroll through the profile list of other users that share the same preference as him. As these users may or may not be actively looking for a roommate at the exact same time but they can be previous users.
+- We didn't want the user to just scroll through the profile list of other users that share the same preference as him. As these users may or may not be actively looking for a roommate at the exact same time but they can be previous users.
 - To tackle this problem we created groups. It is similar to WhatsApp groups. Here it is a group of people who are interested in the same flat/room present on the platform.
 - The list of groups for a specific apartment is present on the room-profile page. So when any user finds a room that is suiting his style of living, he can see different groups that have a requirement for more members. For example, when the total accommodation of an apartment is 4 but only 2 members are currently present in the group.
 - The user can then look at the members present in the group and their profiles. If the user profiles are matching his preferences then he can decide to make a request to join the group.
