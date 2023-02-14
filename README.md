@@ -2,7 +2,7 @@
 <p align="center">
 <img src="./assets/screenshots/logo.svg">
 <br>
-<I>"Find your central perk in life"
+<I>"Find your central perk in life"</I>
 </p>
 
 <br>
@@ -27,7 +27,7 @@ Find the problem statement [here](/assets/PS.pdf).
 
 ---
 
-### Our Approach :
+### Our Approach
 
 **Problem Statement as we understood it** -
 
@@ -36,21 +36,21 @@ There were 2 main requirements in the PS -
 - Finding the perfect roommate match depending on user preferences and input
 - Avoid Catfishing on the platform
 
-**Solution** -
+**Solution**
 
-Entities in the system -
+Entities in the system:
 
 - User - who needs a roommate
 - House - different houses available for rent
 - House-owner - Owner of the apartment
 - Group - group of people who are interested in the same room/apartment
 
-#### 1. Finding the roommate match for the user -
+#### 1. Finding the roommate match for the user
 
-- We take as input the following data from the user -
+- We take as input the following data from the user:
 
   - Is a drinker?
-  - Is a smoker ?
+  - Is a smoker?
   - occupation
   - age
   - gender
@@ -61,8 +61,9 @@ Entities in the system -
 - This matching can also be done by using ML algorithms. However, there is no need for ML in this case because we don't want similar profiles but exact preference matches.
 - For this, we give filters to users while searching for rooms/roommates(just like when you shop on myntra or amazon) and we use these filter keywords to find the rooms
 
-#### 2. Group system -
+#### 2. Group system
 
+https://github.com/viveknamaye/ShareSpace/edit/main/README.md
 - This is a crucial component of the solution.
 - We didn't want the user to just scroll through the profile list of other users that share the same preference as him. As these users may or may not be actively looking for a roommate at the exact same time but they can be previous users.
 - To tackle this problem we created groups. It is similar to WhatsApp groups. Here it is a group of people who are interested in the same flat/room present on the platform.
@@ -71,7 +72,7 @@ Entities in the system -
 - Once approved by other members of the group he can join the group.
 - Once the group is full, they can collectively apply for the room.
 
-#### 3. Verification of User Data -
+#### 3. Verification of User Data
 
 - This was the most challenging part. How to verify whether the data given by different users while registering on the platform is true or not. Because if the data is not correct then it will cause tons of problems.
 - For example, If I as a user need a particular apartment. Let's assume that I am a smoker/drinker and I see that the room's other roommates are not allowing drinking/smoking in the residence. In this case, I can show myself as a non-drinker/non-smoker until I get the apartment.
@@ -82,19 +83,19 @@ Entities in the system -
 
 ---
 
-### Architecture Diagram :
+### Architecture Diagram
 
 ![architecture](/assets/screenshots/architecture.svg)
 
 ---
 
-### Designs :
+### Designs
 
 **Landing Page**
 
 ![landing page](/assets/screenshots/landing.png)
 
-**Authentication**
+**Authentication**https://github.com/viveknamaye/ShareSpace/edit/main/README.md
 
 | ![phonelogin](/assets/screenshots/mobilenumber.jpg) | ![otpverification](/assets/screenshots/otpprofile.jpg) |
 | --------------------------------------------------- | ------------------------------------------------------ |
@@ -109,7 +110,7 @@ Entities in the system -
 ![room profile](/assets/screenshots/roomprofile.jpg)
 
 **Group Profile**
-
+https://github.com/viveknamaye/ShareSpace/edit/main/README.md
 ![group profile](/assets/screenshots/groupprofile.png)
 
 **User Profile**
@@ -118,7 +119,7 @@ Entities in the system -
 
 ---
 
-### Technologies Used :
+### Technologies Used
 
 - ReactJs
 - Tailwind
@@ -126,7 +127,7 @@ Entities in the system -
 - Figma
 - Excalidraw
 
-### Authors :
+### Authors
 
 - Akshay Kanade
   - [Portfolio](https://www.akshaykanade.me/) | [Twitter](https://twitter.com/kanadeakshay20) | [GitHub](https://github.com/kanadeakshay)
