@@ -21,7 +21,7 @@ Find the problem statement [here](/assets/PS.pdf).
 
 - [Our Approach](#our-approach)
 - [Architecture](#architecture-diagram)
-- [Designs](#screenshots)
+- [Designs](#designs)
 - [Technologies used](#technologies-used)
 - [Authors](#authors)
 
@@ -63,7 +63,6 @@ Entities in the system:
 
 #### 2. Group system
 
-https://github.com/viveknamaye/ShareSpace/edit/main/README.md
 - This is a crucial component of the solution.
 - We didn't want the user to just scroll through the profile list of other users that share the same preference as him. As these users may or may not be actively looking for a roommate at the exact same time but they can be previous users.
 - To tackle this problem we created groups. It is similar to WhatsApp groups. Here it is a group of people who are interested in the same flat/room present on the platform.
@@ -95,7 +94,7 @@ https://github.com/viveknamaye/ShareSpace/edit/main/README.md
 
 ![landing page](/assets/screenshots/landing.png)
 
-**Authentication**https://github.com/viveknamaye/ShareSpace/edit/main/README.md
+**Authentication**
 
 | ![phonelogin](/assets/screenshots/mobilenumber.jpg) | ![otpverification](/assets/screenshots/otpprofile.jpg) |
 | --------------------------------------------------- | ------------------------------------------------------ |
@@ -110,7 +109,7 @@ https://github.com/viveknamaye/ShareSpace/edit/main/README.md
 ![room profile](/assets/screenshots/roomprofile.jpg)
 
 **Group Profile**
-https://github.com/viveknamaye/ShareSpace/edit/main/README.md
+
 ![group profile](/assets/screenshots/groupprofile.png)
 
 **User Profile**
